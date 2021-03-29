@@ -13,7 +13,7 @@ example and uses the values that were input into the function:
 
 export function sum(a, b) {
 
-    return [a + b, `The sum of ${a} and ${b} is ${a + b}.`]
+    return [a + b, `The sum of ${a} and ${b} is ${a + b}.`];
 
 }
 
@@ -29,7 +29,7 @@ Write a function called multiply() that takes in two numbers as arguments and re
 
 export function multiply(a, b) {
 
-    return [a * b, `The product of ${a} and ${b} is ${a * b}.`]
+    return [a * b, `The product of ${a} and ${b} is ${a * b}.`];
 
 }
 
@@ -54,7 +54,19 @@ function that you've already created. You're going to have to be resourceful to 
 how to do this. However, you may continue to use the + operator for string concatenation.
 */
 
+//return [a + b, `The sum of ${a} and ${b} is ${a + b}.`];
+
 export function sumAndMultiplyThreeNumbers(a, b, c) { //eslint-disable-line
+
+    const add = sum(a, b);
+    const finalSum = sum(add[0], c);
+    const multi = multiply(a, b);
+    const finalMulti = multiply(multi[0], c);
+
+    console.log(add)
+    console.log(finalSum)
+    return [finalSum[0], finalMulti[0], `${a} and ${b} and ${c} sum to ${finalSum[0]}.`, `The product of ${a} and ${b} and ${c} is ${finalMulti[0]}.`];
+
 
 }
 
